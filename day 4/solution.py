@@ -41,13 +41,10 @@ print(f"part1 = {part1}")
 
 # part 2
 part2 = 0
-for i in range(len(array)):
-    for j in range(len(array[i])):
+for i in range(1, len(array) - 1):
+    for j in range(1, len(array[i]) - 1):
         # A is mid
         if array[i][j] != "A":
-            continue
-        # exclude borders
-        if i == 0 or i == len(array) - 1 or j == 0 or j == len(array[i]) - 1:
             continue
         # left diagonal
         if array[i - 1][j - 1] == "M" and array[i + 1][j + 1] == "S" or array[i - 1][j - 1] == "S" and array[i + 1][j + 1] == "M":
